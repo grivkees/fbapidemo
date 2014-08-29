@@ -162,8 +162,6 @@
 }
 
 #login-example a {
-  text-shadow: none;
-  color: #F9E794;
   display: inline-block;
   margin: 0 0.3em;
 }
@@ -333,6 +331,11 @@ div.results img {
 #parse h2 {
   font-size: 30px;
   margin-top: 20px;
+}
+
+#parse h3 {
+  font-weight: bold;
+  color: #9CAEE2;
 }
 
 #parse img {
