@@ -9,7 +9,7 @@
 
   <link href="css/basic-styles.css" rel="stylesheet" />
   <link href="css/slide.css" rel="stylesheet" />
-  <link href='http://fonts.googleapis.com/css?family=Cabin+Condensed:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="favicon.ico" />
 </head>
 <body>
@@ -26,7 +26,7 @@
   <!-- This contains all the slides -->
   <div id="impress">
 
-    <!-- (1) intro slide -->
+    <!-- (1) intro -->
     <div
       id="intro"
       class="step"
@@ -34,23 +34,37 @@
       data-y="0"
       data-scale="2.5"
       data-transition-duration="200">
-      <h1>facebook api</h1>
+      <h1>Facebook Dev Tools</h1>
       <h2>ways to bootstrap your hack</h2>
       <div class="arrow_box"></div>
 
-      <!-- Lu's profile -->
+      <!-- Adam's profile -->
       <div class="profile">
         <img src="https://graph.facebook.com/adamgross42/picture?width=200&amp;height=200" />
         <div class="table">
           <div class="table-cell-valign">
-            <p><a href="http://www.fb.me/adamgross42" taget="_blank">Adam Gross</a> (ECE '13)</p>
-            <p>Production Engineer</p>
+            <p><a href="http://fb.me/adamgross42" taget="_blank">Adam Gross</a> (ECE '13)</p>
+            <p>Production Engineer on Platform</p>
           </div>
         </div>
       </div>
+
+      <!-- Nate's profile -->
+      <div class="profile">
+        <img src="https://graph.facebook.com/1Nate/picture?width=200&amp;height=200" />
+        <div class="table">
+          <div class="table-cell-valign">
+            <p><a href="http://fb.me/1Nate" taget="_blank">Nate Schloss</a> (CS '14)</p>
+            <p>Software Engineer on Notifications</p>
+          </div>
+        </div>
+      </div>
+      <p class="fact light center">
+        fun fact: we both interned at Facebook after junior year
+      </p>
     </div>
 
-    <!-- (2) integration summary -->
+    <!-- (2) integrations -->
     <div
       id="integration"
       class="step"
@@ -62,16 +76,19 @@
       <h2 class="center">let's go over a few tools at your disposal...</h2>
     </div>
 
-    <!-- (3) fb login -->
+    <!-- (3) Login -->
     <div
-      id="fb-login"
+      id="login"
       class="step"
       data-x="8000"
       data-y="-1200"
       data-rotate="20"
       data-scale="2.5"
       data-transition-duration="200">
-      <h1 class="center">facebook login</h1>
+      <h1 class="center">Facebook Login</h1>
+      <h2 class="center">
+        personalize the experience
+      </h2>
       <p class="center">
         Don't waste precious hack time by writing
         <br />
@@ -79,9 +96,9 @@
       </p>
     </div>
 
-    <!-- (4) supported sdks -->
+    <!-- (4) SDKs -->
     <div
-      id="supported-sdk"
+      id="sdks"
       class="step"
       data-x="8750"
       data-y="-2500"
@@ -90,7 +107,7 @@
       data-transition-duration="200">
       <h1 class="center">
         We have libraries for nearly all platforms and languages, making it
-        easy to use Facebook (and FB Login) within your app.
+        easy to use Facebook (and Login) within your app.
       </h1>
 
       <div class="icons">
@@ -100,20 +117,20 @@
         <a href="https://developers.facebook.com/docs/ios/" target="_blank">
           <img src="images/ios.png" title="iOS" />
         </a>
-        <a href="https://developers.facebook.com/docs/facebook-login/login-flow-for-web-no-jssdk/" target="_blank">
+        <a href="https://developers.facebook.com/docs/facebook-login/login-flow-for-web/" target="_blank">
           <img src="images/desktop.png" title="Desktop Apps" />
         </a>
         <br />
         <a href="https://developers.facebook.com/docs/reference/php/" target="_blank">
           <img src="images/php.png" title="PHP SDK" />
         </a>
-        <a href="https://developers.facebook.com/docs/sdks/" target="_blank">
+        <a href="https://developers.facebook.com/docs/other-sdks" target="_blank">
           <img src="images/python.png" title="Python" />
         </a>
-        <a href="https://developers.facebook.com/docs/sdks/" target="_blank">
+        <a href="https://developers.facebook.com/docs/other-sdks" target="_blank">
           <img src="images/ruby.png" title="Ruby" />
         </a>
-        <a href="https://developers.facebook.com/docs/sdks/" target="_blank">
+        <a href="https://developers.facebook.com/docs/other-sdks" target="_blank">
           <img src="images/node.png" title="Node.js" />
         </a>
       </div>
@@ -127,7 +144,7 @@
       </p>
     </div>
 
-    <!-- (5) login demo. Search for 'fb_login_demo_js' below to look at the JS -->
+    <!-- (5) Login demo (search for 'fb_login_demo_js' below to look at the JS) -->
     <div
       id="login-example"
       class="step"
@@ -170,7 +187,7 @@
       </div>
     </div>
 
-    <!-- (6) graph splash -->
+    <!-- (6) Graph API -->
     <div
       id="graph"
       class="step"
@@ -179,7 +196,7 @@
       data-scale="4"
       data-rotate="-20"
       data-transition-duration="200">
-      <h1 class="center">the "graph"</h1>
+      <h1 class="center">Graph API</h1>
       <p>
         Why create fake data to put in your app when you can use the real
         stuff instead?
@@ -319,7 +336,7 @@
       </div>
     </div>
 
-    <!-- (9) facebook plugins -->
+    <!-- (9) Social plugins -->
     <div
       id="plugins"
       class="step"
@@ -328,7 +345,7 @@
       data-scale="3"
       data-transition-duration="200">
       <div class="caption fl">
-        <h1>plugins</h1>
+        <h1>Social Plugins</h1>
         <h2>copy and paste widgets for easy interaction</h2>
 
         <h2 class="live">
@@ -345,7 +362,7 @@
       </div>
     </div>
 
-    <!-- (10) fb notifications api -->
+    <!-- (10) Notifications -->
     <div
       id="notifs"
       class="step"
@@ -353,7 +370,7 @@
       data-y="-2500"
       data-scale="3"
       data-transition-duration="200">
-      <h1 class="center">notifications</h1>
+      <h1 class="center">Notifications</h1>
       <h2 class="center">
         alert users via Facebook notifications
         <span class="accent-yellow-light">just don't spam plz</span>
@@ -361,20 +378,50 @@
       <img src="images/notif.png" title="Notification screenshot" />
     </div>
 
-    <!-- (11) summary -->
+    <!-- (11) Parse -->
+    <div
+      id="parse"
+      class="step"
+      data-x="-3000"
+      data-y="-1500"
+      data-scale="5"
+      data-transition-duration="200">
+      <h1 class="center">Parse</h1>
+      <h2 class="center">
+        one backend to rule them all
+      </h2>
+      <img src="images/parse.png" title="Parse" />
+      <h3 class="center">
+        <b class="accent-yellow">
+          <a href="https://parse.com/products/core" target="_blank">
+            Core
+          </a>
+          &nbsp;&nbsp;
+          <a href="https://parse.com/products/push" target="_blank">
+            Push
+          </a>
+          &nbsp;&nbsp;
+          <a href="https://parse.com/products/core" target="_blank">
+            Analytics
+          </a>
+        </b>
+      </h3>
+    </div>
+
+    <!-- (12) summary -->
     <div
       id="summary"
       class="step"
-      data-x="-6000"
-      data-y="2500"
-      data-scale="12"
+      data-x="-8000"
+      data-y="3000"
+      data-scale="10"
       data-transition-duration="200">
       <h1>tl;dr</h1>
       <p>
         <a href="https://developers.facebook.com/docs/facebook-login/" target="_blank">
           <b class="accent-yellow">Facebook Login</b>
         </a>
-        = quickly &amp; easily rig up a login system
+        = personalize the experience
       </p>
       <p>
         <a href="https://developers.facebook.com/docs/reference/api/" target="_blank">
@@ -384,20 +431,29 @@
       </p>
       <p>
         <b class="accent-yellow">
+          <a href="https://developers.facebook.com/docs/plugins/" target="_blank">
+            Social Plugins
+          </a>
+          +
           <a href="https://developers.facebook.com/docs/games/notifications/" target="_blank">
             Notifications
           </a>
-          +
-          <a href="https://developers.facebook.com/docs/plugins/" target="_blank">
-            Plugins
+        </b>
+        = integrate with Facebook
+      </p>
+      <p>
+        <b class="accent-yellow">
+          <a href="https://parse.com" target="_blank">
+            Parse
           </a>
         </b>
-        = other ways to leverage Facebook
+        = don't sweat your app's backend
       </p>
 
       <h2>p.s.</h2>
       <p>
-        FB is awarding a swag package for "Best Social Integration"
+        Facebook is awarding a swag package to the hackathon project with the<br />
+        <span class="accent-yellow">best use of Facebook’s developer tools and integrations</span>
       </p>
     </div>
   </div>
@@ -416,18 +472,9 @@
   </div>
 
 
-
-
-
-
-
-
-
-
-
-  <!-- include the impress.js and jQuery libraryes -->
+  <!-- include the impress.js and jQuery libraries -->
   <script src="impress.js/js/impress.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script>impress().init();</script>
 
   <!-- Facebook API integration with Javascript API -->
@@ -455,7 +502,7 @@
       // Update the profile pic.
       $('#profilePic').attr(
         'src',
-        'http://graph.facebook.com/' + userId + '/picture?type=square'
+        'https://graph.facebook.com/' + userId + '/picture?type=square'
       );
 
       // Update the uid field.

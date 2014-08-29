@@ -1,13 +1,17 @@
 .step {
-  width: 900px;
+  width: 1000px;
   padding: 40px;
   margin: 20px auto;
   padding-top: 80px;
 }
 
 /*
-  (1) intro slide
+  (1) intro
 */
+
+#intro h1 {
+  font-size: 85px;
+}
 
 #intro .profile {
   margin-top: 35px;
@@ -78,7 +82,7 @@
 
 
 /*
-  (2) integration summary
+  (2) integrations
 */
 
 #integration h1 {
@@ -91,37 +95,41 @@
 }
 
 /*
-  (3) fb login
+  (3) Login
 */
 
-#fb-login h1 {
+#login h1 {
+  margin-bottom: 15px;
+}
+
+#login h2 {
   margin-bottom: 15px;
 }
 
 
 /*
-  (4) supported sdks
+  (4) SDKs
 */
 
-#supported-sdk h1 {
+#sdks h1 {
   font-size: 40px;
   width: 800px;
   line-height: 1.2;
 }
 
-#supported-sdk .icons {
+#sdks .icons {
   padding: 50px;
   text-align: center;
 }
 
-#supported-sdk .icons img {
+#sdks .icons img {
   max-height: 150px;
   max-width: 150px;
 }
 
 
 /*
-  (5) login example
+  (5) Login demo
 */
 
 #login-example p {
@@ -183,7 +191,7 @@
 }
 
 /*
-  (6) graph splash
+  (6) Graph API
 */
 
 #graph p.smaller {
@@ -269,7 +277,7 @@ div.results img {
 }
 
 /*
-  (9) facebook plugins
+  (9) Social Plugins
 */
 
 #plugins .fb-comments {
@@ -296,7 +304,7 @@ div.results img {
 
 
 /*
-  (10) notifications
+  (10) Notifications
 */
 
 #notifs span {
@@ -315,7 +323,26 @@ div.results img {
 
 
 /*
-  (11) summary
+  (11) Parse
+*/
+
+#parse span {
+  font-size: 14px;
+}
+
+#parse h2 {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+#parse img {
+  margin: 30px auto;
+  display: block;
+}
+
+
+/*
+  (12) summary
 */
 
 #summary h2 {
@@ -324,7 +351,7 @@ div.results img {
 
 
 /*
-  top bar with git.to links
+  top bar with links
 */
 
 #follow-along {
