@@ -1,3 +1,0 @@
-- better icons
-- tidy up README
-
