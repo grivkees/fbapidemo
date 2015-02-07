@@ -470,7 +470,7 @@
       /* json */ response) {
 
       var authd = user_is_logged_into_app;
-      var userId = 1;
+      var userId = 0;
 
       // Show or hide relevant sections.
       if (authd) {
@@ -483,13 +483,15 @@
       }
 
       // Update the profile pic.
-      $('#profilePic').attr(
-        'src',
-        'https://graph.facebook.com/' + userId + '/picture?type=square'
-      );
+      if (userId) {
+        $('#profilePic').attr(
+          'src',
+          'https://graph.facebook.com/' + userId + '/picture?type=square'
+        );
 
-      // Update the uid field.
-      $('#uniqueUserId').val(authd ? 'uid='+userId : 'no user id');
+        // Update the uid field.
+        $('#uniqueUserId').val(authd ? 'uid='+userId : 'no user id');
+      }
     };
 
     // When the FB JS SDK is loaded, run this function.
