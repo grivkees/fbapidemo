@@ -17,7 +17,7 @@
     // To use this demo on your own, you should change these values.
     var settings = {
       APP_ID : '370421499757445',
-      EVENT_ID : '1499523143661114'
+      GROUP_ID : '758829450862728'
     };
   </script>
 
@@ -97,17 +97,17 @@
       </h1>
 
       <div class="icons">
-        <a href="https://developers.facebook.com/docs/android/" target="_blank">
+        <a href="https://developers.facebook.com/docs/android" target="_blank">
           <img src="images/android.png" title="Android"/>
         </a>
-        <a href="https://developers.facebook.com/docs/ios/" target="_blank">
+        <a href="https://developers.facebook.com/docs/ios" target="_blank">
           <img src="images/ios.png" title="iOS" />
         </a>
-        <a href="https://developers.facebook.com/docs/facebook-login/login-flow-for-web/" target="_blank">
+        <a href="https://developers.facebook.com/docs/facebook-login/login-flow-for-web" target="_blank">
           <img src="images/desktop.png" title="Desktop Apps" />
         </a>
         <br />
-        <a href="https://developers.facebook.com/docs/reference/php/" target="_blank">
+        <a href="https://developers.facebook.com/docs/reference/php" target="_blank">
           <img src="images/php.png" title="PHP SDK" />
         </a>
         <a href="https://developers.facebook.com/docs/other-sdks" target="_blank">
@@ -146,7 +146,7 @@
         <p>
           Show the FB Login button, since the user isn't logged in.
         </p>
-        <div class="fb-login-button" data-scope="user_events,user_actions.music">
+        <div class="fb-login-button" data-scope="user_actions.music">
         </div>
       </div>
 
@@ -197,9 +197,9 @@
       </p>
     </div>
 
-    <!-- (7) event attendee demo -->
+    <!-- (7) group member demo -->
     <div
-      id="event-attendees"
+      id="group-members"
       class="step"
       data-x="8250"
       data-y="1300"
@@ -210,27 +210,26 @@
         <div class="node table-cell-valign">
           <p>
             Demo:
-            <strong>Attendees of the HSHacks II Facebook event</strong>
+            <strong>Members of the TreeHacks 2015 Facebook Group</strong>
           </p>
 <pre>FB.api(
-  '<b>/<script>document.write(settings.EVENT_ID)</script>?fields=attending.fields(picture,name)</b>',
+  '<b>/<script>document.write(settings.GROUP_ID)</script>/members?fields=picture,name</b>',
   function(<b>response</b>) {
     /* Here's where you handle the response.
-     * Be sure user_events is in your access token!
-     * To inspect this call in the API explorer <script>document.write('<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=' + settings.EVENT_ID + '%3Ffields%3Dattending.fields(picture%2Cname)" target="_blank">click here</a>.');</script>
+     * To inspect this call in the API explorer <script>document.write('<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=' + settings.GROUP_ID + '/members%3Ffields%3Dpicture%2Cname" target="_blank">click here</a>.');</script>
      */
   }
 );</pre>
           <input
             type="button"
-            onclick="fillAttendeesOfEvent();"
+            onclick="fillMembersOfGroup();"
             value="Run API Call"
           />
-          <div id="event-attendees-results" class="results"></div>
+          <div id="group-members-results" class="results"></div>
           <script>
             var goAPIExplorerEvent = function() {
-              var url = 'https://developers.facebook.com/tools/explorer/?method=GET&path=' + settings.EVENT_ID +
-              '%3Ffields%3Dattending.fields(picture%2Cname)';
+              var url = 'https://developers.facebook.com/tools/explorer/?method=GET&path=' + settings.GROUP_ID +
+              '/members%3Ffields%3Dpicture%2Cname';
               window.location.href = url;
             };
             var returnIsErrorAndAlertIfNeeded = function(response) {
@@ -242,21 +241,16 @@
             var appendImg = function(elem, src) {
               $(elem).append($("<img>").attr({'src': src, 'width': 50}));
             };
-            var fillAttendeesOfEvent = function() {
-              /* You can find out the id of any event by loading all the user's events.
-                 I found the event ID id by going to:
-                 https://developers.facebook.com/tools/explorer?method=GET&path=me%2Fevents
-                 !!! make sure you add user_events to your access token !!!
-              */
-              $('#event-attendees-results').html('').addClass('loading');
-              FB.api('/' + settings.EVENT_ID + '?fields=attending.fields(picture,name)', function(response) {
+            var fillMembersOfGroup = function() {
+              $('#group-members-results').html('').addClass('loading');
+              FB.api('/' + settings.GROUP_ID + '/members?fields=picture,name', function(response) {
                 if (returnIsErrorAndAlertIfNeeded(response))
                   return;
-                var results = $('#event-attendees-results').html('').removeClass('loading');
-                var attendees = response.attending.data;
+                var results = $('#group-members-results').html('').removeClass('loading');
+                var members = response.data;
                 var numAdded = 0;
-                for (var i = 0; numAdded < 60 && i < attendees.length; i++) {
-                  var person = attendees[i];
+                for (var i = 0; numAdded < 60 && i < members.length; i++) {
+                  var person = members[i];
                   var picture_data = person.picture.data;
                   if (picture_data.is_silhouette) {
                     continue;
@@ -386,7 +380,7 @@
           Push
         </a>
         &nbsp;&nbsp;
-        <a href="https://parse.com/products/core" target="_blank">
+        <a href="https://parse.com/products/analytics" target="_blank">
           Analytics
         </a>
       </h3>
@@ -402,24 +396,24 @@
       data-transition-duration="200">
       <h1>tl;dr</h1>
       <p>
-        <a href="https://developers.facebook.com/docs/facebook-login/" target="_blank">
+        <a href="https://developers.facebook.com/docs/facebook-login" target="_blank">
           <b class="accent-yellow">Facebook Login</b>
         </a>
         = personalize the experience
       </p>
       <p>
-        <a href="https://developers.facebook.com/docs/reference/api/" target="_blank">
+        <a href="https://developers.facebook.com/docs/graph-api" target="_blank">
           <b class="accent-yellow">Graph API</b>
         </a>
         = get real data (judges can actually try your app!)
       </p>
       <p>
         <b class="accent-yellow">
-          <a href="https://developers.facebook.com/docs/plugins/" target="_blank">
+          <a href="https://developers.facebook.com/docs/plugins" target="_blank">
             Social Plugins
           </a>
           +
-          <a href="https://developers.facebook.com/docs/games/notifications/" target="_blank">
+          <a href="https://developers.facebook.com/docs/games/notifications" target="_blank">
             Notifications
           </a>
         </b>
@@ -436,7 +430,7 @@
 
       <h2>p.s.</h2>
       <p>
-        Facebook is awarding a lunch/tour prize to the <span class="accent-yellow">best beginner hack</span>!
+        Facebook is awarding a swag package to the hack with the <span class="accent-yellow">best use of the Facebook APIs</span>!
       </p>
     </div>
   </div>
