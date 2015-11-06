@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+  <title>Facebook Developer Tools Intro for Hackathons</title>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=1024" />
+
+  <link href="css/basic-styles.css" rel="stylesheet" />
+  <link href="css/slide.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700' rel='stylesheet' type='text/css'>
+  <link rel="shortcut icon" href="favicon.ico" />
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+</head>
+<body>
+  <script>
+    // To use this demo on your own, you should change these values.
+    var settings = {
+      APP_ID : '1655648568054285',
+      GROUP_ID : '1616715545250098',
+      PARSE_APP_ID : '5vAZDxiGrVpU3sWDILwEpLQoFsUqWKvh60TlEKq6',
+      PARSE_JS_KEY : 'orXUdTHXtzl6O4yKWV3KKe4GTgafgIEGetkuo6EV',
+    };
+  </script>
+
+  <img src="images/loading.gif" class="preload" />
+
+  <!-- This contains all the slides -->
+  <div id="impress">
+
+    <!-- (1) intro -->
+    <div
+      id="intro"
+      class="step"
+      data-x="1000"
+      data-y="0"
+      data-scale="2.5"
+      data-transition-duration="200">
+      <h1>Facebook Dev Tools</h1>
+      <h2>ways to bootstrap your hack</h2>
+      <div class="arrow_box"></div>
+
+      <!-- Glenn's profile -->
+      <div class="profile">
+        <img src="https://graph.facebook.com/799070570/picture?width=200&amp;height=200" />
+        <div class="table">
+          <div class="table-cell-valign">
+            <p><a href="http://fb.me/glenn.rivkees" taget="_blank">Glenn Rivkees</a></p>
+            <p>Production Engineer on Traffic</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- (2) integrations -->
+    <div
+      id="integration"
+      class="step"
+      data-x="6000"
+      data-y="0"
+      data-scale="5"
+      data-transition-duration="200">
+      <h1 class="center">what might help my hack?</h1>
+      <h2 class="center">let's go over a few tools at your disposal...</h2>
+    </div>
+
+    <!-- (3) Login -->
+    <div
+      id="login"
+      class="step"
+      data-x="8000"
+      data-y="-1200"
+      data-rotate="20"
+      data-scale="2.5"
+      data-transition-duration="200">
+      <h1 class="center">Facebook Login</h1>
+      <h2 class="center">
+        personalize the experience
+      </h2>
+      <p class="center">
+        Don't waste precious hack time by writing
+        <br />
+        a login system from scratch.
+      </p>
+    </div>
+
+    <!-- (4) SDKs -->
+    <div
+      id="sdks"
+      class="step"
+      data-x="8750"
+      data-y="-2500"
+      data-rotate="110"
+      data-scale="2.3"
+      data-transition-duration="200">
+      <h1 class="center">
+        We have libraries for nearly all platforms and languages, making it
+        easy to use Facebook (and Login) within your app.
+      </h1>
+
+      <div class="icons">
+        <a href="https://developers.facebook.com/docs/android" target="_blank">
+          <img src="images/android.png" title="Android"/>
+        </a>
+        <a href="https://developers.facebook.com/docs/ios" target="_blank">
+          <img src="images/ios.png" title="iOS" />
+        </a>
+        <a href="https://developers.facebook.com/docs/facebook-login/login-flow-for-web" target="_blank">
+          <img src="images/desktop.png" title="Desktop Apps" />
+        </a>
+        <br />
+        <a href="https://developers.facebook.com/docs/reference/php" target="_blank">
+          <img src="images/php.png" title="PHP SDK" />
+        </a>
+        <a href="https://developers.facebook.com/docs/other-sdks" target="_blank">
+          <img src="images/python.png" title="Python" />
+        </a>
+        <a href="https://developers.facebook.com/docs/other-sdks" target="_blank">
+          <img src="images/ruby.png" title="Ruby" />
+        </a>
+        <a href="https://developers.facebook.com/docs/other-sdks" target="_blank">
+          <img src="images/node.png" title="Node.js" />
+        </a>
+      </div>
+
+      <p class="center">
+        We're using the
+        <a href="https://developers.facebook.com/docs/reference/javascript/" target="_blank">
+          Javascript SDK
+        </a>
+        in this presentation.
+      </p>
+    </div>
+
+    <!-- (5) Login demo (search for 'fb_login_demo_js' below to look at the JS) -->
+    <div
+      id="login-example"
+      class="step"
+      data-x="7650"
+      data-y="-2900"
+      data-scale="0.6"
+      data-rotate="110"
+      data-transition-duration="200">
+
+      <!-- what to show when logged out -->
+      <div id="login-demo-logged-out">
+        <h1>Logged Out View</h1>
+        <p>
+          Show the FB Login button, since the user isn't logged in.
+        </p>
+        <div class="fb-login-button" data-scope="user_actions.music">
+        </div>
+      </div>
+
+      <!-- what to show when logged in -->
+      <div id="login-demo-logged-in">
+        <h1>Logged In View</h1>
+        <p>
+          The user is logged in! You can immediately access the current
+          user's ID and profile pic. Your app can save this ID to your
+          backend to identify returning users.
+        </p>
+
+        <div class="dynamic-info clearfix">
+          <img id="profilePic" />
+          <input type="text" id="uniqueUserId" value="not connected" />
+        </div>
+
+        <p>
+          Uninstall the app to log out:
+          <a href="https://www.facebook.com/settings/?tab=applications" target="_blank">
+            App Settings
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- (6) Graph API -->
+    <div
+      id="graph"
+      class="step"
+      data-x="5250"
+      data-y="1700"
+      data-scale="4"
+      data-rotate="-20"
+      data-transition-duration="200">
+      <h1 class="center">Graph API</h1>
+      <p>
+        Why create fake data to put in your app when you can use the real
+        stuff instead?
+      </p>
+      <p class="smaller">
+        <span class="accent-yellow-light">Read from the graph:</span>
+        newsfeed, check-ins, photos, music listens, messages, events, liked movies/books/sports, friends (and more)
+      </p>
+      <p class="smaller">
+        <span class="accent-yellow-light">Write to the graph:</span>
+        make status updates, upload photos and videos, add a check-in, create events (and more)
+      </p>
+    </div>
+
+    <!-- (7) group member demo -->
+    <div
+      id="group-members"
+      class="step"
+      data-x="8250"
+      data-y="1300"
+      data-rotate="-30"
+      data-scale="3"
+      data-transition-duration="200">
+      <div class="table">
+        <div class="node table-cell-valign">
+          <p>
+            Demo:
+            <strong>Members of the HackDuke 2015 Facebook Group</strong>
+          </p>
+<pre>FB.api(
+  '<b>/<script>document.write(settings.GROUP_ID)</script>/members?fields=picture,name</b>',
+  function(<b>response</b>) {
+    /* Here's where you handle the response.
+     * To inspect this call in the API explorer <script>document.write('<a href="https://developers.facebook.com/tools/explorer/?method=GET&path=' + settings.GROUP_ID + '/members%3Ffields%3Dpicture%2Cname" target="_blank">click here</a>.');</script>
+     */
+  }
+);</pre>
+          <input
+            type="button"
+            onclick="fillMembersOfGroup();"
+            value="Run API Call"
+          />
+          <div id="group-members-results" class="results"></div>
+          <script>
+            var goAPIExplorerEvent = function() {
+              var url = 'https://developers.facebook.com/tools/explorer/?method=GET&path=' + settings.GROUP_ID +
+              '/members%3Ffields%3Dpicture%2Cname';
+              window.location.href = url;
+            };
+            var returnIsErrorAndAlertIfNeeded = function(response) {
+              var isError = !response || response.error;
+              if (isError)
+                alert('FB.api failed, must be demoitis :( You installed the app, right?');
+              return isError;
+            };
+            var appendImg = function(elem, src) {
+              $(elem).append($("<img>").attr({'src': src, 'width': 50}));
+            };
+            var fillMembersOfGroup = function() {
+              $('#group-members-results').html('').addClass('loading');
+              FB.api('/' + settings.GROUP_ID + '/members?fields=picture,name', function(response) {
+                if (returnIsErrorAndAlertIfNeeded(response))
+                  return;
+                var results = $('#group-members-results').html('').removeClass('loading');
+                var members = response.data;
+                var numAdded = 0;
+                for (var i = 0; numAdded < 60 && i < members.length; i++) {
+                  var person = members[i];
+                  var picture_data = person.picture.data;
+                  if (picture_data.is_silhouette) {
+                    continue;
+                  }
+                  numAdded++;
+                  appendImg(results, picture_data.url);
+                }
+              });
+            };
+          </script>
+        </div>
+      </div>
+    </div>
+
+    <!-- (9) Social plugins -->
+    <div
+      id="plugins"
+      class="step"
+      data-x="3900"
+      data-y="-1200"
+      data-scale="3"
+      data-transition-duration="200">
+      <div class="caption fl">
+        <h1>Social Plugins</h1>
+        <h2>copy and paste widgets for easy interaction</h2>
+
+        <h2 class="live">
+         this is live btw, not a screenshot.<br />
+         go on and add a comment &rarr;
+        </h2>
+      </div>
+      <div
+        class="fb-comments fr"
+        data-href="https://grivkees.github.io/fbapidemo"
+        data-width="470"
+        data-num-posts="3"
+        data-order-by="reverse_time">
+      </div>
+    </div>
+
+    <!-- (10) Notifications -->
+    <div
+      id="notifs"
+      class="step"
+      data-x="3900"
+      data-y="-2500"
+      data-scale="3"
+      data-transition-duration="200">
+      <h1 class="center">Notifications</h1>
+      <h2 class="center">
+        alert users via notifications
+        <span class="accent-yellow-light">just don't spam plz</span>
+      </h2>
+      <img src="images/notif.png" title="Notification screenshot" />
+    </div>
+
+    <!-- (11) Parse -->
+    <div
+      id="parse"
+      class="step"
+      data-x="-3000"
+      data-y="-1500"
+      data-scale="5"
+      data-transition-duration="200">
+      <h1 class="center">Parse</h1>
+      <h2 class="center">
+        one backend to rule them all
+      </h2>
+      <img src="images/parse.png" title="Parse" />
+      <h3 class="center">
+        <a href="https://parse.com/products/core" target="_blank">
+          Core
+        </a>
+        &nbsp;&nbsp;
+        <a href="https://parse.com/products/push" target="_blank">
+          Push
+        </a>
+        &nbsp;&nbsp;
+        <a href="https://parse.com/products/analytics" target="_blank">
+          Analytics
+        </a>
+      </h3>
+    </div>
+
+    <!-- (11.b) parse demo -->
+    <div
+      id="parse-kitty"
+      class="step"
+      data-x="-3000"
+      data-y="2000"
+      data-scale="3"
+      data-transition-duration="200">
+      <div class="table">
+        <div class="node table-cell-valign">
+          <p>
+            Demo:
+            <strong>Parse Kitty</strong>
+          </p>
+<pre>Parse.initialize(
+  "<script>document.write(settings.PARSE_APP_ID)</script>",  // app id
+  "<script>document.write(settings.PARSE_JS_KEY)</script>"  // js key
+);
+
+var Kitty = Parse.Object.extend('Kitty', {
+  meow: function() {
+    alert('meow!');
+  },
+  speak: function() {
+    alert('my name is ' + this.get('name'));
+  }
+});
+var lostKitty = new Kitty();
+<a onclick="javascript:lostKitty.meow()">lostKitty.meow()</a>
+<a onclick="javascript:lostKitty.set('name', 'HackKitty')">lostKitty.set('name', 'HackKitty')</a>
+<a onclick="javascript:lostKitty.speak()">lostKitty.speak()</a>
+
+<a onclick="javascript:lostKitty.save(null, {success: function(kitty) {prompt('Your Kitty\'s ID is: ', kitty.id);}});">lostKitty.save(null, {
+  success: function(kitty) {
+    prompt('Your Kitty\'s ID is: ', kitty.id);
+  }
+});</a>
+</pre>
+        </div>
+        <script type="text/javascript">
+          Parse.initialize(settings.PARSE_APP_ID, settings.PARSE_JS_KEY);
+
+          var Kitty = Parse.Object.extend('Kitty', {
+            meow: function() {
+              alert('meow!');
+            },
+            speak: function() {
+              alert('my name is ' + this.get('name'));
+            },
+          });
+          var lostKitty = new Kitty();
+        </script>
+      </div>
+    </div>
+
+    <!-- (11.c) parse demo -->
+    <div
+      id="parse-kitty2"
+      class="step"
+      data-x="-3000"
+      data-y="5500"
+      data-scale="3"
+      data-transition-duration="200">
+      <div class="table">
+        <div class="node table-cell-valign">
+          <p>
+            Demo:
+            <strong>Parse Kitty</strong>
+          </p>
+<pre>Parse.initialize(
+  "<script>document.write(settings.PARSE_APP_ID)</script>",  // app id
+  "<script>document.write(settings.PARSE_JS_KEY)</script>"  // js key
+);
+
+var lostKittyId = <input type="text" id="kittyid" style="display:inline;margin:0;padding:0;">;
+
+var kittyQuery = new Parse.Query('Kitty');
+<a onclick="javascript:kittyQuery.get($('#kittyid').val(), {success: function(object) {window.foundKitty = object;}});">kittyQuery.get(lostKittyId, {
+ success: function(object) {
+   window.foundKitty = object;
+ }
+});</a>
+
+<a onclick="javascript:alert(foundKitty.get('name'));">alert(foundKitty.get('name'))</a>
+</pre>
+        </div>
+        <script type="text/javascript">
+          Parse.initialize(settings.PARSE_APP_ID, settings.PARSE_JS_KEY);
+          var kittyQuery = new Parse.Query('Kitty');
+        </script>
+      </div>
+    </div>
+
+    <!-- (12) summary -->
+    <div
+      id="summary"
+      class="step"
+      data-x="-8000"
+      data-y="3000"
+      data-scale="8"
+      data-transition-duration="200">
+      <h1>tl;dr</h1>
+      <p>
+        <a href="https://developers.facebook.com/docs/facebook-login" target="_blank">
+          <b class="accent-yellow">Facebook Login</b>
+        </a>
+        = personalize the experience
+      </p>
+      <p>
+        <a href="https://developers.facebook.com/docs/graph-api" target="_blank">
+          <b class="accent-yellow">Graph API</b>
+        </a>
+        = get real data (judges can actually try your app!)
+      </p>
+      <p>
+        <b class="accent-yellow">
+          <a href="https://developers.facebook.com/docs/plugins" target="_blank">
+            Social Plugins
+          </a>
+          +
+          <a href="https://developers.facebook.com/docs/games/notifications" target="_blank">
+            Notifications
+          </a>
+        </b>
+        = integrate with Facebook
+      </p>
+      <p>
+        <b class="accent-yellow">
+          <a href="https://parse.com" target="_blank">
+            Parse
+          </a>
+        </b>
+        = don't sweat your app's backend
+      </p>
+    </div>
+  </div>
+
+  <!-- floating bar at the top -->
+  <div id="follow-along">
+    Live demo at
+    <a href="https://grivkees.github.io/fbapidemo" target="_blank">
+      <b class="accent-yellow">grivkees.github.io/fbapidemo</b>
+    </a>
+    &mdash;
+    Source code at
+    <a href="https://github.com/grivkees/fbapidemo" target="_blank">
+      <b class="accent-yellow">github.com/grivkees/fbapidemo</b>
+    </a>
+  </div>
+
+
+  <!-- include the impress.js and jQuery libraries -->
+  <script src="impress.js/js/impress.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>impress().init();</script>
+
+  <!-- Facebook API integration with Javascript API -->
+  <div id="fb-root"></div>
+  <script class="fb_login_demo_js">
+
+    // Update the page state based on if the user is logged in.
+    function update_html_from_login_state(
+      /* boolean */ user_is_logged_into_app,
+      /* json */ response) {
+
+      var authd = user_is_logged_into_app;
+      var userId = 0;
+
+      // Show or hide relevant sections.
+      if (authd) {
+        $('#login-demo-logged-out').removeClass('active');
+        $('#login-demo-logged-in').addClass('active');
+        userId = response.authResponse.userID;
+      } else {
+        $('#login-demo-logged-out').addClass('active');
+        $('#login-demo-logged-in').removeClass('active');
+      }
+
+      // Update the profile pic.
+      if (userId) {
+        $('#profilePic').attr(
+          'src',
+          'https://graph.facebook.com/' + userId + '/picture?type=square'
+        );
+
+        // Update the uid field.
+        $('#uniqueUserId').val(authd ? 'uid='+userId : 'no user id');
+      }
+    };
+
+    // When the FB JS SDK is loaded, run this function.
+    window.fbAsyncInit = function() {
+      update_html_from_login_state(false, {});
+      FB.init({
+        appId      : settings.APP_ID, // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+      FB.Event.subscribe(
+        'auth.authResponseChange',
+        function(response) {
+          update_html_from_login_state(
+            response.status === "connected",
+            response
+          );
+        }
+      );
+    };
+
+    // Load the SDK asynchronously.
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/en_US/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+  </script>
+</body>
+</html>

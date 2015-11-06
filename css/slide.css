@@ -1,0 +1,386 @@
+.step {
+  width: 1000px;
+  padding: 40px;
+  margin: 20px auto;
+  padding-top: 80px;
+}
+
+/*
+  (1) intro
+*/
+
+#intro h1 {
+  font-size: 85px;
+}
+
+#intro .profile {
+  margin-top: 35px;
+  font-size: 25px;
+  display: block;
+}
+
+#intro .profile img {
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  margin-right: 20px;
+  float: left;
+}
+
+#intro .profile a {
+  font-weight: bold;
+}
+
+#intro .profile p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+#intro .profile .table-cell-valign {
+  height: 120px;
+}
+
+#intro .fact {
+  font-size: 15px;
+  font-style: italic;
+  margin-top: 25px;
+}
+
+.arrow_box {
+  margin-top: 30px;
+  position: relative;
+  background: #4C66A4;
+  border-bottom: 4px solid #9CAEE2;
+}
+
+.arrow_box:after, .arrow_box:before {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.arrow_box:after {
+  border-color: rgba(76, 102, 164, 0);
+  border-top-color: #4C66A4;
+  border-width: 30px;
+  left: 50%;
+  margin-left: -30px;
+}
+
+.arrow_box:before {
+  border-color: rgba(156, 174, 226, 0);
+  border-top-color: #9CAEE2;
+  border-width: 36px;
+  left: 50%;
+  margin-left: -36px;
+}
+
+
+
+/*
+  (2) integrations
+*/
+
+#integration h1 {
+  font-size: 65px;
+}
+
+#integration h2 {
+  margin-top: 15px;
+  font-size: 40px;
+}
+
+/*
+  (3) Login
+*/
+
+#login h1 {
+  margin-bottom: 15px;
+}
+
+#login h2 {
+  margin-bottom: 15px;
+}
+
+
+/*
+  (4) SDKs
+*/
+
+#sdks h1 {
+  font-size: 40px;
+  width: 800px;
+  line-height: 1.2;
+}
+
+#sdks .icons {
+  padding: 50px;
+  text-align: center;
+}
+
+#sdks .icons img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+
+/*
+  (5) Login demo
+*/
+
+#login-example p {
+  font-size: 18px;
+}
+
+#login-example h1 {
+  font-size: 24px;
+}
+
+#login-demo-logged-out,
+#login-demo-logged-in {
+  opacity: 0.2;
+  background-color: #9CAEE2;
+  border-radius: 8px;
+  height: 250px;
+  padding: 20px;
+  margin: 5px;
+}
+
+#login-demo-logged-out p,
+#login-demo-logged-in p {
+  color: #000;
+}
+
+/* this class gets added when the user log in state is detected */
+#login-demo-logged-out.active,
+#login-demo-logged-in.active {
+  opacity: 1;
+}
+
+#login-example a {
+  display: inline-block;
+  margin: 0 0.3em;
+}
+
+#login-example .dynamic-info {
+  border-radius: 3px;
+  margin: 10px auto;
+  padding: 10px;
+  width: 550px;
+  display: block;
+  background-color: #5A6EA9;
+}
+
+#login-example #profilePic {
+  float: left;
+  height: 50px;
+}
+
+#login-example #uniqueUserId {
+  padding: 4px;
+  font-family: 'Courier New', serif;
+  height: 40px;
+  font-size: 38px;
+  float: right;
+}
+
+/*
+  (6) Graph API
+*/
+
+#graph p.smaller {
+  font-size: 22px;
+  width: 80%;
+  margin: 25px auto;
+}
+
+/*
+  (7) and (8) API demos
+*/
+
+.node {
+  border-radius: 50%;
+  height: 800px;
+  width: 800px;
+  text-align: center;
+  background-color: #CFD6E6;
+}
+
+.node p {
+  color: #000;
+}
+
+.node pre {
+  font-family: 'Courier New', sans-serif;
+  padding: 15px;
+  color: black;
+  font-size: 18px;
+  text-align: left;
+  width: 500px;
+  margin-left: 50px;
+}
+
+div.results {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 180px;
+  overflow: auto;
+}
+
+div.results img {
+  display: inline-block;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.node input {
+  padding: 10px;
+  font-size: 20px;
+  margin: 0px auto 15px auto;
+  display: block;
+  margin-top: -40px;
+}
+
+.node input {
+ border:1px solid #25729a; -webkit-border-radius: 3px; -moz-border-radius: 3px;border-radius: 3px; padding: 10px 10px 10px 10px; text-shadow: -1px -1px 0 rgba(0,0,0,0.3); text-align: center; color: #FFFFFF; background-color: #3093c7;
+ background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3093c7), color-stop(100%, #1c5a85));
+ background-image: -webkit-linear-gradient(top, #3093c7, #1c5a85);
+ background-image: -moz-linear-gradient(top, #3093c7, #1c5a85);
+ background-image: -ms-linear-gradient(top, #3093c7, #1c5a85);
+ background-image: -o-linear-gradient(top, #3093c7, #1c5a85);
+ background-image: linear-gradient(top, #3093c7, #1c5a85);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3093c7, endColorstr=#1c5a85);
+
+-webkit-animation-name: bluePulse;
+-webkit-animation-duration: 2s;
+-webkit-animation-iteration-count: infinite;
+}
+
+.node input:hover {
+ cursor: pointer;
+ border:1px solid #1c5675; background-color: #26759e;
+ background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#26759e), color-stop(100%, #133d5b));
+ background-image: -webkit-linear-gradient(top, #26759e, #133d5b);
+ background-image: -moz-linear-gradient(top, #26759e, #133d5b);
+ background-image: -ms-linear-gradient(top, #26759e, #133d5b);
+ background-image: -o-linear-gradient(top, #26759e, #133d5b);
+ background-image: linear-gradient(top, #26759e, #133d5b);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#26759e, endColorstr=#133d5b);
+}
+
+.loading {
+  background: url('../images/loading.gif') no-repeat center center;
+}
+
+/*
+  (9) Social Plugins
+*/
+
+#plugins .fb-comments {
+  max-width: 480px;
+  background-color: #FFF;
+}
+
+#plugins .caption {
+  width: 350px;
+}
+
+#plugins h1 {
+  font-size: 65px;
+}
+
+#plugins h2 {
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+#plugins .live {
+  font-size: 22px;
+}
+
+
+/*
+  (10) Notifications
+*/
+
+#notifs span {
+  font-size: 14px;
+}
+
+#notifs h2 {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+#notifs img {
+  margin: 30px auto;
+  display: block;
+}
+
+
+/*
+  (11) Parse
+*/
+
+#parse span {
+  font-size: 14px;
+}
+
+#parse h2 {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+#parse h3 {
+  font-weight: bold;
+  color: #9CAEE2;
+}
+
+#parse img {
+  margin: 30px auto;
+  display: block;
+}
+
+
+/*
+  (12) summary
+*/
+
+#summary h2 {
+  margin-top: 20px;
+}
+
+
+/*
+  top bar with links
+*/
+
+#follow-along {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  height: 30px;
+  line-height: 30px;
+  background-color: #333;
+  width: 100%;
+  color: #FFF;
+  text-align: center;
+}
+
+#follow-along b {
+  letter-spacing: 0.1em;
+  padding: 0 0.2em;
+}
+
+/*
+  Let's add an obnoxious glow! From:
+  http://www.zurb.com/playground/radioactive-buttons
+*/
+@-webkit-keyframes bluePulse {
+  from { background-color: #007d9a; -webkit-box-shadow: 0 0 18px #333; }
+  50% { background-color: #2daebf; -webkit-box-shadow: 0 0 25px #2daebf; }
+  to { background-color: #007d9a; -webkit-box-shadow: 0 0 18px #333; }
+}
