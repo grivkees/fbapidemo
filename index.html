@@ -11,13 +11,16 @@
   <link href="css/slide.css" rel="stylesheet" />
   <link href='https://fonts.googleapis.com/css?family=Cabin+Condensed:400,700' rel='stylesheet' type='text/css'>
   <link rel="shortcut icon" href="favicon.ico" />
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
 </head>
 <body>
   <script>
     // To use this demo on your own, you should change these values.
     var settings = {
       APP_ID : '1655652034720605',
-      GROUP_ID : '1616715545250098'
+      GROUP_ID : '1616715545250098',
+      PARSE_APP_ID : '5vAZDxiGrVpU3sWDILwEpLQoFsUqWKvh60TlEKq6',
+      PARSE_JS_KEY : 'orXUdTHXtzl6O4yKWV3KKe4GTgafgIEGetkuo6EV',
     };
   </script>
 
@@ -265,57 +268,6 @@
       </div>
     </div>
 
-
-    <!-- (8) music listens demo -->
-    <div
-      id="music-listens"
-      class="step"
-      data-x="6650"
-      data-y="3725"
-      data-scale="3"
-      data-transition-duration="200">
-      <div class="table">
-        <div class="node table-cell-valign">
-          <p>
-            Demo:
-            <strong>Recent Music Listens</strong>
-          </p>
-
-<pre>FB.api(
-  '<b>/me/music.listens</b>',
-  function(<b>response</b>) {
-    /* Here's where you handle the response.
-     * Be sure user_actions.music is in your access token!
-     * To inspect this call in the API explorer <a href="https://developers.facebook.com/tools/explorer?method=GET&amp;path=me%2Fmusic.listens" target="_blank">click here</a>.
-     */
-  }
-);</pre>
-          <input
-            type="button"
-            onclick="fillMusicListens();"
-            value="Run API Call"
-          />
-          <div id='music-listens-results' class="results"></div>
-          <script>
-            var fillMusicListens = function() {
-              $('#music-listens-results').html('').addClass('loading');
-              FB.api('/me/music.listens', function(response) {
-                if (returnIsErrorAndAlertIfNeeded(response))
-                  return;
-                var results = $('#music-listens-results').html('').removeClass('loading');
-                for (var i = 0; i < response.data.length && i < 22; i++) {
-                  FB.api('/' + response.data[i].data.song.id, function(response) {
-                    if (response && response.image && response.image[0] && response.image[0].url)
-                      appendImg(results, response.image[0].url);
-                  });
-                }
-              });
-            };
-          </script>
-        </div>
-      </div>
-    </div>
-
     <!-- (9) Social plugins -->
     <div
       id="plugins"
@@ -384,6 +336,99 @@
           Analytics
         </a>
       </h3>
+    </div>
+
+    <!-- (11.b) parse demo -->
+    <div
+      id="parse-kitty"
+      class="step"
+      data-x="-3000"
+      data-y="2000"
+      data-scale="3"
+      data-transition-duration="200">
+      <div class="table">
+        <div class="node table-cell-valign">
+          <p>
+            Demo:
+            <strong>Parse Kitty</strong>
+          </p>
+<pre>Parse.initialize(
+  "<script>document.write(settings.PARSE_APP_ID)</script>",  // app id
+  "<script>document.write(settings.PARSE_JS_KEY)</script>"  // js key
+);
+
+var Kitty = Parse.Object.extend('Kitty', {
+  meow: function() {
+    alert('meow!');
+  },
+  speak: function() {
+    alert('my name is ' + this.get('name'));
+  }
+});
+var lostKitty = new Kitty();
+<a onclick="javascript:lostKitty.meow()">lostKitty.meow()</a>
+<a onclick="javascript:lostKitty.set('name', 'HackKitty')">lostKitty.set('name', 'HackKitty')</a>
+<a onclick="javascript:lostKitty.speak()">lostKitty.speak()</a>
+
+<a onclick="javascript:lostKitty.save(null, {success: function(kitty) {prompt('Your Kitty\'s ID is: ', kitty.id);}});">lostKitty.save(null, {
+  success: function(kitty) {
+    prompt('Your Kitty\'s ID is: ', kitty.id);
+  }
+});</a>
+</pre>
+        </div>
+        <script type="text/javascript">
+          Parse.initialize(settings.PARSE_APP_ID, settings.PARSE_JS_KEY);
+
+          var Kitty = Parse.Object.extend('Kitty', {
+            meow: function() {
+              alert('meow!');
+            },
+            speak: function() {
+              alert('my name is ' + this.get('name'));
+            },
+          });
+          var lostKitty = new Kitty();
+        </script>
+      </div>
+    </div>
+
+    <!-- (11.c) parse demo -->
+    <div
+      id="parse-kitty2"
+      class="step"
+      data-x="-3000"
+      data-y="5500"
+      data-scale="3"
+      data-transition-duration="200">
+      <div class="table">
+        <div class="node table-cell-valign">
+          <p>
+            Demo:
+            <strong>Parse Kitty</strong>
+          </p>
+<pre>Parse.initialize(
+  "<script>document.write(settings.PARSE_APP_ID)</script>",  // app id
+  "<script>document.write(settings.PARSE_JS_KEY)</script>"  // js key
+);
+
+var lostKittyId = <input type="text" id="kittyid" style="display:inline;margin:0;padding:0;">;
+
+var kittyQuery = new Parse.Query('Kitty');
+<a onclick="javascript:kittyQuery.get($('#kittyid').val(), {success: function(object) {window.foundKitty = object;}});">kittyQuery.get(lostKittyId, {
+ success: function(object) {
+   window.foundKitty = object;
+ }
+});</a>
+
+<a onclick="javascript:alert(foundKitty.get('name'));">alert(foundKitty.get('name'))</a>
+</pre>
+        </div>
+        <script type="text/javascript">
+          Parse.initialize(settings.PARSE_APP_ID, settings.PARSE_JS_KEY);
+          var kittyQuery = new Parse.Query('Kitty');
+        </script>
+      </div>
     </div>
 
     <!-- (12) summary -->
